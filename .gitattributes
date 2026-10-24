@@ -1,0 +1,41 @@
+# =============================================================================
+# 换行与文本归一化
+#
+# 仓库内统一以 LF 存储，检出时由 Git 按平台决定工作区换行。
+# 显式声明 eol=lf 的文件在任何平台上都保持 LF，避免跨平台改动污染 diff。
+# =============================================================================
+* text=auto
+
+*.c                 text eol=lf
+*.h                 text eol=lf
+*.hpp               text eol=lf
+*.cpp               text eol=lf
+*.s                 text eol=lf linguist-language=Assembly
+*.ld                text eol=lf linguist-language=LinkerScript
+*.cmake             text eol=lf
+*.md                text eol=lf
+*.json              text eol=lf
+*.ioc               text eol=lf
+CMakeLists.txt      text eol=lf
+CMakePresets.json   text eol=lf
+.gitattributes      text eol=lf
+.gitignore          text eol=lf
+LICENSE             text eol=lf
+
+# =============================================================================
+# 二进制：不要尝试 diff / 合并
+# =============================================================================
+*.elf   binary
+*.bin   binary
+*.hex   binary
+*.o     binary
+*.a     binary
+*.png   binary
+*.jpg   binary
+*.pdf   binary
+
+# =============================================================================
+# GitHub
+# =============================================================================
+# third_party/ 是 vendored 的厂商代码，不计入本仓库的语言统计
+third_party/** linguist-vendored

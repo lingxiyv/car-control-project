@@ -1,0 +1,54 @@
+# ===== 构建输出 =====
+build/
+build-*/
+cmake-build-*/
+out/
+
+# CMake 生成物（防止散落在源码目录）
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+compile_commands.json
+.cache/
+.clangd/
+
+# ===== CLion / IDE =====
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.settings/
+.cproject
+.project
+*.launch
+
+# ===== 编译/链接产物 =====
+*.o
+*.obj
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+*.d
+*.su
+*.out
+*.srec
+
+# ===== 日志与临时文件 =====
+*.log
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# ===== CubeMX 生成但本工程不使用的产物 =====
+# .ioc 在 boards/<board>/ 下，CubeMX 会在那里生成一整套 CMake 工程。
+# 本工程的构建脚本在仓库根目录手写维护（CMakeLists.txt + cmake/），
+# 所以下面这些一律不要入库，每次重新生成后删掉即可。
+boards/*/Drivers/
+boards/*/Middlewares/
+boards/*/cmake/
+boards/*/CMakeLists.txt
